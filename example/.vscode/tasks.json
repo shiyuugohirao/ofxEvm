@@ -1,0 +1,72 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ReleaseBuild_x64",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "./${workspaceFolderBasename}.sln",
+                "/p:configuration=release",
+                "/p:platform=x64"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "DebugBuild_x64",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "./${workspaceFolderBasename}.sln",
+                "/p:configuration=debug",
+                "/p:platform=x64"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "ReleaseClean_x64",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "./${workspaceFolderBasename}.sln",
+                "/t:Clean",
+                "/p:configuration=release",
+                "/p:platform=x64"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "DebugClean_x64",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "./${workspaceFolderBasename}.sln",
+                "/t:Clean",
+                "/p:configuration=debug",
+                "/p:platform=x64"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

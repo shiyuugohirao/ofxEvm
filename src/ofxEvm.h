@@ -78,6 +78,9 @@ public:
 	{
 		return evm.getChromeAttenuation();
 	}
+	const ofFloatImage& getResult(){
+		return result;
+	}
 
 protected:
 	EulerianVideoMagnification evm;

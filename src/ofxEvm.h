@@ -24,7 +24,9 @@ public:
 	void update(cv::Mat& frame)
 	{
 		using namespace ofxCv;
-
+		if (!pyramid.empty() && (frame.size() != pyramid[0].size())){
+			evm.reset();
+		}
 		cv::Mat result_mat;
 		evm.amplify(frame, pyramid, result_mat);
 

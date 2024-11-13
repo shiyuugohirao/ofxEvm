@@ -96,7 +96,10 @@ void EulerianVideoMagnification::amplifyByAlpha()
 		lambda /= 2.0;
 	}
 }
-
+void EulerianVideoMagnification::reset()
+{
+	first_frame=true;
+}
 void EulerianVideoMagnification::setAmplification(float value)
 {
 	alpha = value;
